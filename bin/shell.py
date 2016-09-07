@@ -1,10 +1,12 @@
 #!/usr/bin/python
 import socket,subprocess
 import ConfigParser
+import os
 
 #load configuration file
 Config = ConfigParser.ConfigParser()
-Config.read("./etc/shell.conf")
+Config.read(os.environ['SPLUNK_HOME']+"/etc/apps/TA-Shell/etc/shell.conf")
+
 
 #config function
 def ConfigSectionMap(section):
