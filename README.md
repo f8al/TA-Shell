@@ -25,7 +25,7 @@ To create the listener on the box you wish to cannect to run:
  ```
  $ nc -vv -l -p 9997
 listening on [any] 9997 ...
-connect to [107.150.53.164] from ip24-252-37-155.om.om.cox.net [24.252.37.155] 64190
+connect to [server] from ip24-252-37-155.om.om.cox.net [24.252.37.155] 64190
 [*] Connection Established!
 ```
 Ctrl+c to break connection
