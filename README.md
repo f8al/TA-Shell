@@ -16,7 +16,7 @@ This is useful when you need to make configuration changes to a host you have De
     lhost: 127.0.0.1
     lport: 9997
 
-To create the listener on the box you wish to cannect to run:
+To create the listener on the box you wish to connect back to run:
 ```bash
  nc -vv -l -p 9997
  ```
