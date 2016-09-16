@@ -1,8 +1,7 @@
 # TA-Shell
 ## Splunk scripted input for opening a backconnect shell on a remote forwarder
 
-This app uses a variant of the "undetectable" backconnect python shell from TrustedSec,
-leveraged as a scripted input to have it execute the python code that will spawn a shell as the user splunk is running as.
+This app uses a variant of a python shellwritten by DaveK from TrustedSec in 2012, leveraged as a scripted input to have it execute the python code that will spawn a shell as the user splunk is running as.
 
 This is useful when you need to make configuration changes to a host you have Deployment server access to, but not SSH/Remote management.
 
