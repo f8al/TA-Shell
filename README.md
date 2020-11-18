@@ -1,3 +1,5 @@
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/f8al/TA-Shell.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/f8al/TA-Shell/context:python)
+
 # TA-Shell
 ## Splunk scripted input for opening a backconnect shell on a remote forwarder
 
